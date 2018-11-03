@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "jekyll/deploy/shosetsu/version"
+require "jekyll-deploy-shosetsu/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-deploy-shosetsu"
-  spec.version       = Jekyll::Deploy::Shosetsu::VERSION
+  spec.version       = JekyllDeployShosetsu::VERSION
   spec.authors       = ["Fuji Nakahara"]
   spec.email         = ["fujinakahara2032@gmail.com"]
 

@@ -1,6 +1,6 @@
-RSpec.describe Jekyll::Deploy::Shosetsu do
+RSpec.describe JekyllDeployShosetsu do
   it "has a version number" do
-    expect(Jekyll::Deploy::Shosetsu::VERSION).not_to be nil
+    expect(JekyllDeployShosetsu::VERSION).not_to be nil
   end
 
   it "does something useful" do

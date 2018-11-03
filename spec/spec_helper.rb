@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "jekyll/deploy/shosetsu"
+require "jekyll-deploy-shosetsu"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
