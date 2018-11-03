@@ -3,6 +3,7 @@ PATH
   specs:
     jekyll-deploy-shosetsu (0.1.0)
       jekyll (~> 3.5)
+      kakuyomu_client
 
 GEM
   remote: https://rubygems.org/
@@ -10,6 +11,8 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     ast (2.4.0)
+    childprocess (0.9.0)
+      ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.2)
     colorator (1.1.0)
     concurrent-ruby (1.0.5)
@@ -41,6 +44,8 @@ GEM
       sass (~> 3.4)
     jekyll-watch (2.1.2)
       listen (~> 3.0)
+    kakuyomu_client (0.1.0)
+      selenium-webdriver (~> 3.14)
     kramdown (1.17.0)
     liquid (4.0.1)
     listen (3.1.5)
@@ -90,12 +95,16 @@ GEM
       unicode-display_width (~> 1.4.0)
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
+    rubyzip (1.2.2)
     safe_yaml (1.0.4)
     sass (3.6.0)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    selenium-webdriver (3.141.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2, >= 1.2.2)
     unicode-display_width (1.4.0)
 
 PLATFORMS
