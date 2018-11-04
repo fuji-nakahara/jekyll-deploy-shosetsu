@@ -5,8 +5,10 @@ RSpec.describe Jekyll::Commands::DeployKakuyomu do
     let(:options) do
       {
         'source'   => source_dir,
-        'email'    => email,
-        'password' => password,
+        'kakuyomu' => {
+          'email'    => email,
+          'password' => password,
+        },
       }
     end
     let(:email) { 'dummy@example.com' }
@@ -14,7 +16,8 @@ RSpec.describe Jekyll::Commands::DeployKakuyomu do
 
     let(:client) do
       spy('client').tap do |client|
-        allow(client).to receive(:create_episode) { 'http://example.com/created-url' }
+        allow(client).to receive(:create_episode) { 'https://kakuyomu.jp/works/1234567890123456789/episodes/1234567890123456789' }
+        allow(client).to receive(:update_episode) { 'https://kakuyomu.jp/works/1234567890123456789/episodes/1234567890123456790' }
       end
     end
 
