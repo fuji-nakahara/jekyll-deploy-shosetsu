@@ -7,7 +7,7 @@ module Jekyll
         def init_with_program(prog)
           prog.command(:'deploy-kakuyomu') do |c|
             c.syntax 'deploy-kakuyomu [options]'
-            c.description 'Deploy posts to kakuyomu'
+            c.description 'Deploy posts to Kakuyomu'
             c.alias :dk
 
             c.option 'config', '--config CONFIG_FILE[,CONFIG_FILE2,...]', Array, 'Custom configuration file'

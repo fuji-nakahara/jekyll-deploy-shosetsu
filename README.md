@@ -20,7 +20,7 @@ You can deploy your posts to Kakuyomu by the following command:
 
     $ bundle exec jekyll deploy-kakuyomu --email YOUR_EMAIL --password YOUR_PASSWORD --work_id KAKUYOMU_WORK_ID
 
-You can also edit the deploy settings in `_config.yml`
+You can also edit the deploy settings in `_config.yml`:
 
 ```yaml
 kakuyomu:
