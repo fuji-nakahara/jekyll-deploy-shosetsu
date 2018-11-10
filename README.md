@@ -2,6 +2,8 @@
 
 Jekyll plugin that adds subcommands to deploy your posts to [Kakuyomu](https://kakuyomu.jp/).
 
+This gem is build on [KakuyomuAgent](https://github.com/fuji-nakahara/kakuyomu_agent) and [FujiMarkdown](https://github.com/fuji-nakahara/fuji_markdown).
+
 ## Installation
 
 Add this line to your application's Gemfile:
