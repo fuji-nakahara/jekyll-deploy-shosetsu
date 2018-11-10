@@ -1,6 +1,6 @@
 RSpec.describe Jekyll::Commands::DeployKakuyomu do
   describe '.process' do
-    subject { described_class.process(options, deployer: JekyllDeployShosetsu::Deployers::Kakuyomu.new(client: client)) }
+    subject { described_class.process(options, deployer: JekyllDeployShosetsu::Deployers::Kakuyomu.new(agent: agent)) }
 
     let(:options) do
       {
@@ -14,10 +14,10 @@ RSpec.describe Jekyll::Commands::DeployKakuyomu do
     let(:email) { 'dummy@example.com' }
     let(:password) { 'dummy_password' }
 
-    let(:client) do
-      spy('client').tap do |client|
-        allow(client).to receive(:create_episode) { 'https://kakuyomu.jp/works/1234567890123456789/episodes/1234567890123456789' }
-        allow(client).to receive(:update_episode) { 'https://kakuyomu.jp/works/1234567890123456789/episodes/1234567890123456790' }
+    let(:agent) do
+      spy('agent').tap do |agent|
+        allow(agent).to receive(:create_episode) { 'https://kakuyomu.jp/works/1234567890123456789/episodes/1234567890123456789' }
+        allow(agent).to receive(:update_episode) { 'https://kakuyomu.jp/works/1234567890123456789/episodes/1234567890123456790' }
       end
     end
 
@@ -25,12 +25,12 @@ RSpec.describe Jekyll::Commands::DeployKakuyomu do
       reset_source_dir
     end
 
-    it 'calls client methods' do
+    it 'calls agent methods' do
       subject
 
-      expect(client).to have_received(:login!).with(email: email, password: password)
-      expect(client).to have_received(:create_episode)
-      expect(client).to have_received(:update_episode)
+      expect(agent).to have_received(:login!).with(email: email, password: password)
+      expect(agent).to have_received(:create_episode)
+      expect(agent).to have_received(:update_episode)
     end
   end
 end

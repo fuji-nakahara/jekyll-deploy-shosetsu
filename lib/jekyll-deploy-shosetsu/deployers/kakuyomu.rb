@@ -1,16 +1,16 @@
 module JekyllDeployShosetsu
   module Deployers
     class Kakuyomu
-      attr_reader :client
+      attr_reader :agent
 
-      def initialize(client: KakuyomuClient.new)
-        @client = client
+      def initialize(agent: KakuyomuAgent.new)
+        @agent = agent
       end
 
       def deploy(site)
         email    = site.config['kakuyomu']['email']
         password = site.config['kakuyomu']['password']
-        client.login!(email: email, password: password)
+        agent.login!(email: email, password: password)
 
         work_id = site.config['kakuyomu']['work_id']
 
@@ -21,11 +21,11 @@ module JekyllDeployShosetsu
           next if kakuyomu_config['ignore']
 
           if kakuyomu_config['url']
-            episode_id = KakuyomuClient::UrlUtils.extract_episode_id(kakuyomu_config['url'])
-            url        = client.update_episode(work_id: work_id, episode_id: episode_id, title: post['title'], body: post.output)
+            episode_id = KakuyomuAgent::UrlUtils.extract_episode_id(kakuyomu_config['url'])
+            url        = agent.update_episode(work_id: work_id, episode_id: episode_id, title: post['title'], body: post.output)
             Jekyll.logger.info 'Updated:', "#{post.basename} #{url}"
           else
-            url = client.create_episode(work_id: work_id, title: post['title'], body: post.output)
+            url = agent.create_episode(work_id: work_id, title: post['title'], body: post.output)
             Jekyll.logger.info 'Created:', "#{post.basename} #{url}"
             add_kakuyomu_url_config(post, url)
           end
