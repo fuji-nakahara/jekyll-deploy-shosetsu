@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Fuji Nakahara']
   spec.email         = ['fujinakahara2032@gmail.com']
 
-  spec.summary       = 'Jekyll plugin that adds command to deploy posts to Kakuyomu'
+  spec.summary       = 'Jekyll plugin that adds command to deploy posts to Kakuyomu or Narou'
   spec.homepage      = 'https://github.com/fuji-nakahara/jekyll-deploy-shosetsu'
   spec.license       = 'MIT'
 
