@@ -27,22 +27,12 @@ module JekyllDeployShosetsu
           else
             url = agent.create_episode(work_id: work_id, title: post['title'], body: post.output)
             Jekyll.logger.info 'Created:', "#{post.basename} #{url}"
-            add_kakuyomu_url_config(post, url)
+            Util.append_yaml_front_matter post.path, <<~YAML
+              kakuyomu:
+                url: #{url}
+            YAML
           end
         end
-      end
-
-      private
-
-      def add_kakuyomu_url_config(post, url)
-        content    = File.read(post.path)
-        config     = content[Jekyll::Document::YAML_FRONT_MATTER_REGEXP, 1]
-        new_config = config + <<~YAML
-          kakuyomu:
-            url: #{url}
-        YAML
-        new_content = content.gsub(config, new_config)
-        File.write(post.path, new_content)
       end
     end
   end
