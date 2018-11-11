@@ -24,12 +24,12 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'jekyll', '~> 3.5'
 
-  spec.add_dependency 'jekyll-fuji_markdown'
-  spec.add_dependency 'kakuyomu_agent'
+  spec.add_dependency 'jekyll-fuji_markdown', '~> 0.3'
+  spec.add_dependency 'kakuyomu_agent', '~> 0.2'
 
   spec.add_development_dependency 'bundler', '~> 1.17'
-  spec.add_development_dependency 'meowcop'
-  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'meowcop', '~> 1.17'
+  spec.add_development_dependency 'pry', '>= 0.12'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
 end

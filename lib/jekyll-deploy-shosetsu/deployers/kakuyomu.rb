@@ -21,7 +21,7 @@ module JekyllDeployShosetsu
           next if kakuyomu_config['ignore']
 
           if kakuyomu_config['url']
-            episode_id = KakuyomuAgent::UrlUtils.extract_episode_id(kakuyomu_config['url'])
+            episode_id = KakuyomuAgent::UrlHelper.extract_episode_id(kakuyomu_config['url'])
             url        = agent.update_episode(work_id: work_id, episode_id: episode_id, title: post['title'], body: post.output)
             Jekyll.logger.info 'Updated:', "#{post.basename} #{url}"
           else
