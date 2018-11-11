@@ -15,10 +15,10 @@ module JekyllDeployShosetsu
         work_id = site.config['kakuyomu']['work_id']
 
         site.posts.docs.each do |post|
-          post.output = Jekyll::Renderer.new(site, post).run
-
           kakuyomu_config = post['kakuyomu'] || {}
           next if kakuyomu_config['ignore']
+
+          post.output = Jekyll::Renderer.new(site, post).run
 
           if kakuyomu_config['url']
             episode_id = KakuyomuAgent::UrlHelper.extract_episode_id(kakuyomu_config['url'])
