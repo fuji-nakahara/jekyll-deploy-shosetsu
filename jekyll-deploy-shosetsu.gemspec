@@ -25,8 +25,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'jekyll', '~> 3.5'
 
   spec.add_dependency 'jekyll-fuji_markdown', '~> 0.3'
-  spec.add_dependency 'kakuyomu_agent', '~> 0.2'
-  spec.add_dependency 'narou_agent', '~> 0.1'
+  spec.add_dependency 'kakuyomu_agent', '~> 0.3'
+  spec.add_dependency 'narou_agent', '~> 0.2'
 
   spec.add_development_dependency 'bundler', '~> 1.17'
   spec.add_development_dependency 'meowcop', '~> 1.17'
