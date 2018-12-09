@@ -22,10 +22,10 @@ module JekyllDeployShosetsu
 
           if narou_config['url']
             part_id = NarouAgent::UrlHelper.extract_part_id(narou_config['url'])
-            url     = agent.update_part(ncode: ncode, part_id: part_id, subtitle: post['title'], body: post.output)
+            url     = agent.update_part(ncode: ncode, part_id: part_id, subtitle: post['title'], body: post.output, date: post.date)
             Jekyll.logger.info 'Updated:', "#{post.basename} #{url}"
           else
-            url = agent.create_part(ncode: ncode, subtitle: post['title'], body: post.output)
+            url = agent.create_part(ncode: ncode, subtitle: post['title'], body: post.output, date: post.date)
             Jekyll.logger.info 'Created:', "#{post.basename} #{url}"
             Util.append_yaml_front_matter post.path, <<~YAML
               narou:

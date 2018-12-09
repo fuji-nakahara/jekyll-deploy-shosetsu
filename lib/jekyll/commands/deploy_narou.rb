@@ -15,6 +15,7 @@ module Jekyll
             c.alias :dn
 
             c.option 'config', '--config CONFIG_FILE[,CONFIG_FILE2,...]', Array, 'Custom configuration file'
+            c.option "future", "--future", "Publishes posts with a future date"
             c.option 'verbose', '-V', '--verbose', 'Print verbose output.'
 
             COMMAND_OPTIONS.each do |key, val|

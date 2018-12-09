@@ -22,10 +22,10 @@ module JekyllDeployShosetsu
 
           if kakuyomu_config['url']
             episode_id = KakuyomuAgent::UrlHelper.extract_episode_id(kakuyomu_config['url'])
-            url        = agent.update_episode(work_id: work_id, episode_id: episode_id, title: post['title'], body: post.output)
+            url        = agent.update_episode(work_id: work_id, episode_id: episode_id, title: post['title'], body: post.output, date: post.date)
             Jekyll.logger.info 'Updated:', "#{post.basename} #{url}"
           else
-            url = agent.create_episode(work_id: work_id, title: post['title'], body: post.output)
+            url = agent.create_episode(work_id: work_id, title: post['title'], body: post.output, date: post.date)
             Jekyll.logger.info 'Created:', "#{post.basename} #{url}"
             Util.append_yaml_front_matter post.path, <<~YAML
               kakuyomu:
