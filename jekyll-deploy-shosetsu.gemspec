@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'jekyll', '~> 3.5'
+  spec.add_dependency 'jekyll', '>= 3.5', '< 5.0'
 
   spec.add_dependency 'jekyll-fuji_markdown', '~> 0.3'
   spec.add_dependency 'kakuyomu_agent', '~> 0.3'
